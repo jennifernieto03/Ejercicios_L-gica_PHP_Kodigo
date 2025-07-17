@@ -30,9 +30,13 @@ function llamadas($clave, $minutos){
             $zona="Oceanía";
             break;
     }
+    if ($minutos<30){
+        $precio = $precio *(1-0.1);
+    }
+
     $total = $minutos * $precio;
     echo "Llamada a la zona: $zona <br>";
     echo "Precio por minuto: $$precio <br>";
     echo "Total a pagar por $minutos minutos: $$total <br>";
 }
-llamadas(15, 10);
+llamadas(15, 30);
